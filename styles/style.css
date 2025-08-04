@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -48,4 +51,288 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 1140px;
+  gap: 30px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 26px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.result__video-container {
+  margin-bottom: 16px;
+  width: 711px;
+  height: 386px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-item {
+  padding: 3px;
+}
+
+.content__list-container {
+  display: flex;
+  flex-direction: column;
+  height: 298px;
+  overflow-y: auto;
+  gap: 30px;
+  position: relative;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+
+.content__video-card:active {
+  box-shadow: inset 0 0 0 100px rgba(84, 80, 80, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__video-card-thumbnail {
+    height: 103px;
+    min-width: 194px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content__video-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  line-height: 16.2px;
+}
+
+.content__video-card-description-container {
+  margin: 0;
+  width: 200px;
+  flex-grow: 1;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 30px;
+}
+
+.title {
+ font-family: Oswald;
+ font-size: 75px;
+ font-weight: 700;
+ text-transform: uppercase;
+ line-height: 70px;
+}
+
+.content__accent {
+  color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* по заданию указано, что надо задать фон активной камере, но по макету этого нет*/
+/* .content__card-link_current {
+  background-color: rgba(255, 255, 255, 0.3);
+} */ 
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__fieldset {
+  border: none;
+  width: 225px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+.search-form__textfield {
+  font-family: 'Fira Sans Condensed';
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  width: 225px;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  border-left: none;
+  border-right: none;
+  background-color: inherit;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  outline: none;
+}
+
+.search-form__pseudo-checkbox {
+  height: 19px;
+  width: 19px;
+  border: 1px solid #fff;
+  padding: 1px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:hover:has(input[type="checkbox"]) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
+.search-form__label:active:has(input[type="checkbox"]) {
+  text-decoration: none;
+}
+
+.button {
+  border: 1px solid #fff;
+  font-family: 'Fira Sans Condensed';
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.35px;
+  line-height: 20px;
+  background-color: rgb(255 255 255 / 0);
+}
+
+.search-form__submit-button {
+  align-self: self-end;
+  padding: 6px 73.5px;
+}
+
+.more-button {
+  padding: 6px;
+}
+
+button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: inset 0 0 0 100px rgba(84, 80, 80, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.result__video-container {
+  position: relative;
 }
