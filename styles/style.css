@@ -57,7 +57,6 @@ ol {
 .content {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   width: 1140px;
   gap: 30px;
 }
@@ -67,7 +66,11 @@ ol {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 26px;
+  gap: 20px;
+}
+
+.result {
+  padding-top: 76px;
 }
 
 .search-form {
@@ -96,7 +99,7 @@ ol {
 }
 
 .content__list-item {
-  padding: 3px;
+  padding-left: 3px;
 }
 
 .content__list-container {
@@ -115,23 +118,23 @@ ol {
   align-items: flex-start;
 }
 
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   cursor: pointer;
 }
 
-.content__video-card:active {
+.content__card-link:active {
   box-shadow: inset 0 0 0 100px rgba(84, 80, 80, 1);
   text-decoration: none;
   cursor: pointer;
 }
 
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__video-card:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -152,13 +155,12 @@ ol {
 }
 
 .content__video-card-description-container {
-  margin: 0;
   width: 200px;
   flex-grow: 1;
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;;
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
@@ -168,14 +170,13 @@ ol {
 }
 
 .search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  letter-spacing: 1.5px;
-  line-height: 30px;
 }
 
 .title {
- font-family: Oswald;
+ font-family: Oswald, sans-serif;
  font-size: 75px;
  font-weight: 700;
  text-transform: uppercase;
@@ -188,14 +189,15 @@ ol {
 
 .content__card-link {
   display: block;
+  width: 390px;
+  overflow: hidden;
   color: #fff;
   text-decoration: none;
 }
 
-/* по заданию указано, что надо задать фон активной камере, но по макету этого нет*/
-/* .content__card-link_current {
-  background-color: rgba(255, 255, 255, 0.3);
-} */ 
+.content__card-link_current {
+  background-color: #545050;
+}
 
 .visually-hidden {
   position: absolute;
@@ -213,8 +215,10 @@ ol {
 }
 
 .search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   border: none;
-  width: 225px;
 }
 
 .search-form__label {
@@ -225,13 +229,13 @@ ol {
 }
 
 .search-form__textfield {
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #fff;
   width: 225px;
-  border-top: 1px solid rgba(255, 255, 255, 0.7);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255);
+  border-bottom: 1px solid rgba(255, 255, 255);
   border-left: none;
   border-right: none;
   background-color: inherit;
@@ -295,8 +299,8 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 }
 
 .button {
-  border: 1px solid #fff;
-  font-family: 'Fira Sans Condensed';
+  border: 1px solid currentColor;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
